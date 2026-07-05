@@ -185,11 +185,17 @@ export default function HomeClient({ featuredProjects }) {
             />
           </ScrollReveal>
 
-          <div className={styles.servicesGrid}>
+          <div className={styles.servicesStack}>
             {services.map((service, i) => (
-              <ScrollReveal key={service.id} delay={i * 80}>
-                <ServiceCard service={service} index={i} />
-              </ScrollReveal>
+              <div 
+                key={service.id}
+                className={styles.stickyCard}
+                style={{ top: `calc(120px + ${i * 24}px)` }}
+              >
+                <ScrollReveal>
+                  <ServiceCard service={service} index={i} />
+                </ScrollReveal>
+              </div>
             ))}
           </div>
         </div>

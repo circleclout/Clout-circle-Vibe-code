@@ -165,16 +165,20 @@
   background: var(--bg-secondary);
 }
 
-.servicesGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-xl);
+.servicesStack {
+  display: flex;
+  flex-direction: column;
+  gap: 15vh;
+  padding-bottom: 20vh;
+  position: relative;
 }
 
-/* Make the grid asymmetric — 2 + 3 layout (First row: 2 cards) */
-
-.servicesGrid > *:nth-child(4) {
-  grid-column: 1 / 2;
+.stickyCard {
+  position: sticky;
+  max-width: 760px;
+  width: 100%;
+  margin: 0 auto;
+  will-change: transform;
 }
 
 /* ─── STATS ────────────────────────────────── */
@@ -268,11 +272,7 @@
 }
 
 /* ─── RESPONSIVE ───────────────────────────── */
-@media (max-width: 1024px) {
-  .servicesGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
+
   .statsGrid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -305,10 +305,7 @@
     font-size: var(--text-xl);
   }
   
-  .servicesGrid {
-    grid-template-columns: 1fr;
-  }
-  
+
   .portfolioGrid {
     grid-template-columns: 1fr;
   }
