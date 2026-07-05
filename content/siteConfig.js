@@ -16,7 +16,7 @@ const siteConfig = {
 
   // ─── Contact Details ──────────────────────
   // Replace these with your real info
-  email: "hello@cloutcircle.com",
+  email: "circleclout@mail.com",
   phone: "+91 89507 07402",
   whatsapp: "+918950707402", // no spaces, include country code
   address: "Remote",
