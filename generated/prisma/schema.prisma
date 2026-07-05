@@ -1,0 +1,71 @@
+generator client {
+  provider        = "prisma-client-js"
+  output          = "../generated/prisma"
+  previewFeatures = ["driverAdapters"]
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// Starter models — replace with your own
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String   @default("")
+  role      String   @default("user")
+  name      String?
+  createdAt DateTime @default(now())
+  posts     Post[]
+}
+
+model Post {
+  id       String  @id @default(cuid())
+  title    String
+  content  String?
+  authorId String
+  author   User    @relation(fields: [authorId], references: [id])
+}
+
+model Service {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  icon        String
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model SiteSettings {
+  id             String   @id @default(cuid())
+  siteName       String   @default("Clout Circle")
+  contactEmail   String?
+  contactPhone   String?
+  contactAddress String?
+  twitterUrl     String?
+  linkedInUrl    String?
+  instagramUrl   String?
+  updatedAt      DateTime @updatedAt
+}
+
+model ChatLog {
+  id          String   @id @default(cuid())
+  userMessage String
+  botResponse String
+  createdAt   DateTime @default(now())
+}
+
+model PortfolioItem {
+  id          String   @id // acts as slug/id from the old hardcoded format
+  title       String
+  client      String
+  category    String
+  description String
+  results     Json
+  tags        Json
+  image       String
+  featured    Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

@@ -1,0 +1,287 @@
+/* ─── Navbar ───────────────────────────────── */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-xl);
+  transition: background var(--transition-base), 
+              box-shadow var(--transition-base),
+              border-color var(--transition-base);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: transparent;
+}
+
+.header.scrolled {
+  background: var(--bg-card);
+  border-bottom-color: var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+}
+
+[data-theme="light"] .header {
+  background: transparent;
+}
+
+[data-theme="light"] .header.scrolled {
+  background: var(--bg-card);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  gap: var(--space-xl);
+}
+
+/* ─── Logo ─────────────────────────────────── */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  z-index: 10;
+}
+
+.logoClout {
+  color: var(--text-primary);
+}
+
+.logoImage {
+  object-fit: contain;
+}
+
+.logoCircle {
+  color: var(--gold);
+}
+
+/* ─── Nav Links ────────────────────────────── */
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.navLink {
+  position: relative;
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+  transition: color var(--transition-fast);
+}
+
+.navLink:hover {
+  color: var(--text-primary);
+}
+
+.navLink.active {
+  color: var(--gold);
+}
+
+.linkUnderline {
+  position: absolute;
+  bottom: 4px;
+  left: var(--space-md);
+  right: var(--space-md);
+  height: 2px;
+  background: var(--gold);
+  border-radius: 1px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform var(--transition-base);
+}
+
+.navLink:hover .linkUnderline,
+.navLink.active .linkUnderline {
+  transform: scaleX(1);
+}
+
+/* ─── Actions ──────────────────────────────── */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  z-index: 10;
+}
+
+.themeToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-full);
+  color: var(--text-secondary);
+  transition: color var(--transition-fast), background var(--transition-fast);
+}
+
+.themeToggle:hover {
+  color: var(--gold);
+  background: var(--gold-glow);
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 22px;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-inverse);
+  background: var(--gold);
+  border: 1px solid var(--gold);
+  border-radius: var(--radius-full);
+  letter-spacing: 0.01em;
+  transition: all var(--transition-fast);
+}
+
+.ctaButton:hover {
+  background: var(--gold-dark);
+  border-color: var(--gold-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-gold);
+}
+
+.hamburger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: var(--text-primary);
+}
+
+/* ─── Mobile Drawer ────────────────────────── */
+.mobileDrawer {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.mobileDrawer.drawerOpen {
+  pointer-events: all;
+  visibility: visible;
+}
+
+.drawerBackdrop {
+  position: absolute;
+  inset: 0;
+  background: var(--bg-overlay);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.drawerOpen .drawerBackdrop {
+  opacity: 1;
+}
+
+.drawerContent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: min(85vw, 380px);
+  height: 100%;
+  background: var(--bg-secondary);
+  padding: calc(var(--nav-height) + var(--space-xl)) var(--space-xl) var(--space-xl);
+  transform: translateX(100%);
+  transition: transform var(--transition-slow);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-left: 1px solid var(--border-subtle);
+}
+
+.drawerOpen .drawerContent {
+  transform: translateX(0);
+}
+
+.mobileLinks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.mobileLink {
+  display: block;
+  padding: var(--space-md) 0;
+  font-size: var(--text-xl);
+  font-weight: 500;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-subtle);
+  transition: color var(--transition-fast), padding-left var(--transition-fast);
+}
+
+.mobileLink:hover,
+.mobileLink.active {
+  color: var(--gold);
+  padding-left: var(--space-sm);
+}
+
+.mobileActions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.mobileCta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md) var(--space-xl);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--text-inverse);
+  background: var(--gold);
+  border-radius: var(--radius-full);
+  transition: background var(--transition-fast);
+}
+
+.mobileCta:hover {
+  background: var(--gold-dark);
+}
+
+.mobileThemeToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.mobileThemeToggle:hover {
+  color: var(--gold);
+  border-color: var(--border-gold);
+}
+
+/* ─── Responsive ───────────────────────────── */
+@media (max-width: 900px) {
+  .navLinks {
+    display: none;
+  }
+  
+  .ctaButton {
+    display: none;
+  }
+  
+  .hamburger {
+    display: flex;
+  }
+}

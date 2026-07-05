@@ -1,0 +1,83 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  line-height: 1;
+}
+
+/* ─── Sizes ────────────────────────────────── */
+.sm {
+  padding: 8px 18px;
+  font-size: var(--text-xs);
+}
+
+.md {
+  padding: 12px 28px;
+  font-size: var(--text-sm);
+}
+
+.lg {
+  padding: 16px 36px;
+  font-size: var(--text-base);
+}
+
+/* ─── Primary ──────────────────────────────── */
+.primary {
+  color: var(--text-inverse);
+  background: var(--gold);
+  border: 2px solid var(--gold);
+}
+
+.primary:hover {
+  background: var(--gold-dark);
+  border-color: var(--gold-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold);
+}
+
+.primary:active {
+  transform: translateY(0) scale(0.95);
+  box-shadow: none;
+}
+
+/* ─── Outline ──────────────────────────────── */
+.outline {
+  color: var(--gold);
+  background: transparent;
+  border: 2px solid var(--gold);
+}
+
+.outline:hover {
+  background: var(--gold);
+  color: var(--text-inverse);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold);
+}
+
+.outline:active {
+  transform: translateY(0) scale(0.95);
+  box-shadow: none;
+}
+
+/* ─── Ghost ────────────────────────────────── */
+.ghost {
+  color: var(--gold);
+  background: transparent;
+  border: 2px solid transparent;
+}
+
+.ghost:hover {
+  background: var(--gold-glow);
+}
+
+.ghost:active {
+  transform: scale(0.95);
+}

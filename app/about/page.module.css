@@ -1,0 +1,310 @@
+.hero {
+  padding: var(--space-5xl) 0 var(--space-2xl);
+  text-align: center;
+}
+
+/* ─── Story ────────────────────────────────── */
+.storySection {
+  background: var(--bg-secondary);
+}
+
+.storyGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: var(--space-4xl);
+  align-items: start;
+}
+
+.storyContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.storyTitle {
+  font-size: var(--text-3xl);
+  line-height: 1.2;
+  margin-bottom: var(--space-sm);
+}
+
+.storyContent p {
+  font-size: var(--text-base);
+  line-height: 1.8;
+}
+
+.storyVisual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.storyCard {
+  padding: var(--space-xl);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  text-align: center;
+  transition: border-color var(--transition-fast);
+}
+
+.storyCard:hover {
+  border-color: var(--border-gold);
+}
+
+.storyCardLabel {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.storyCardValue {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--gold);
+}
+
+/* ─── Values ───────────────────────────────── */
+.valuesSection {
+  /* default bg */
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-xl);
+}
+
+.valueCard {
+  padding: var(--space-2xl) var(--space-xl);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  text-align: center;
+  transition: transform var(--transition-base), border-color var(--transition-base);
+}
+
+.valueCard:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-gold);
+}
+
+.valueIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--gold-glow);
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.valueTitle {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  font-weight: 700;
+}
+
+.valueDesc {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ─── Team ─────────────────────────────────── */
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-xl);
+}
+
+.teamCard {
+  text-align: center;
+  padding: var(--space-2xl) var(--space-lg);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  transition: transform var(--transition-base);
+}
+
+.teamCard:hover {
+  transform: translateY(-4px);
+}
+
+.teamAvatar {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-full);
+  background: var(--gold-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-sm);
+}
+
+.teamInitial {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--text-inverse);
+}
+
+.teamName {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  font-weight: 700;
+}
+
+.teamRole {
+  font-size: var(--text-sm);
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.teamBio {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-top: var(--space-xs);
+}
+
+.teamSocials {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+}
+
+.teamSocialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-default);
+  color: var(--text-muted);
+  transition: all var(--transition-fast);
+}
+
+.teamSocialLink:hover {
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+/* ─── Process ──────────────────────────────── */
+.processSection {
+  background: var(--bg-secondary);
+}
+
+.processGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-xl);
+}
+
+.processCard {
+  position: relative;
+  padding: var(--space-2xl) var(--space-xl);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  text-align: center;
+}
+
+.processStep {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--gold);
+  opacity: 0.4;
+}
+
+.processIconWrap {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-full);
+  background: var(--gold-glow);
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.processTitle {
+  font-family: var(--font-body);
+  font-size: var(--text-xl);
+  font-weight: 700;
+}
+
+.processDesc {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ─── CTA ──────────────────────────────────── */
+.ctaSection {
+  padding: var(--space-5xl) 0;
+  background: var(--bg-card);
+}
+
+.ctaWrap {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.ctaWrap h2 {
+  font-size: var(--text-4xl);
+}
+
+.ctaWrap p {
+  font-size: var(--text-lg);
+  max-width: 400px;
+}
+
+/* ─── Responsive ───────────────────────────── */
+@media (max-width: 1024px) {
+  .valuesGrid,
+  .teamGrid,
+  .processGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .storyGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+}
+
+@media (max-width: 600px) {
+  .valuesGrid,
+  .teamGrid,
+  .processGrid {
+    grid-template-columns: 1fr;
+  }
+}

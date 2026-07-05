@@ -1,0 +1,93 @@
+.card {
+  position: relative;
+  padding: var(--space-2xl);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: transform var(--transition-base),
+    border-color var(--transition-base),
+    box-shadow var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent, var(--gold));
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3), 0 0 0 1px var(--accent, var(--gold));
+}
+
+[data-theme="light"] .card:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08), 0 0 0 1px var(--accent, var(--gold));
+}
+
+.iconWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 184, 0, 0.1);
+  color: var(--accent, var(--gold));
+  transition: background var(--transition-fast);
+}
+
+.card:hover .iconWrap {
+  background: var(--accent, var(--gold));
+  color: var(--text-inverse);
+}
+
+.title {
+  font-family: var(--font-body);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.desc {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  flex: 1;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--accent, var(--gold));
+  margin-top: var(--space-sm);
+  transition: gap var(--transition-fast);
+}
+
+.link:hover {
+  gap: 10px;
+}
+
+/* Decorative corner accent */
+.corner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(
+    135deg,
+    transparent 50%,
+    rgba(255, 184, 0, 0.04) 50%
+  );
+  transition: background var(--transition-base);
+}
+
+.card:hover .corner {
+  background: linear-gradient(
+    135deg,
+    transparent 50%,
+    rgba(255, 184, 0, 0.1) 50%
+  );
+}
