@@ -19,13 +19,13 @@
 
 /* ─── Design Tokens (Dark Mode — Default) ──── */
 :root {
-  /* Brand Colors */
-  --gold: #FFB800;
-  --gold-dark: #E5A600;
-  --gold-light: #FFD54F;
-  --gold-glow: rgba(255, 184, 0, 0.15);
-  --gold-gradient: linear-gradient(135deg, #FFB800, #FF8C00);
-  --gold-gradient-soft: linear-gradient(135deg, rgba(255, 184, 0, 0.1), rgba(255, 140, 0, 0.05));
+  /* Brand Colors (Fallback Theme) */
+  --gold: #FFFFFF;
+  --gold-dark: #CCCCCC;
+  --gold-light: #F5F5F5;
+  --gold-glow: rgba(255, 255, 255, 0.15);
+  --gold-gradient: linear-gradient(135deg, #FFFFFF, #CCCCCC);
+  --gold-gradient-soft: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
   
   /* Backgrounds */
   --bg-primary: #0A0A0A;
