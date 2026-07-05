@@ -1,51 +1,18 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { CheckCircle, AlertCircle, Send } from "lucide-react";
+import siteConfig from "@/content/siteConfig";
 import styles from "./FeedbackForm.module.css";
-
-// Your Cloudflare Turnstile site key (public — safe to expose)
-const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "1x00000000000000000000AA"; // replace with your key
 
 export default function FeedbackForm() {
   const [formState, setFormState] = useState("idle"); // idle, submitting, success, error
-  const [errorMsg, setErrorMsg] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     feedback: "",
     honeypot: "",
   });
-  const [turnstileToken, setTurnstileToken] = useState(null);
-  const turnstileRef = useRef(null);
-  const widgetIdRef = useRef(null);
-
-  useEffect(() => {
-    // Load the Turnstile script
-    const script = document.createElement("script");
-    script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
-    script.async = true;
-    script.defer = true;
-    script.onload = () => {
-      if (window.turnstile && turnstileRef.current) {
-        widgetIdRef.current = window.turnstile.render(turnstileRef.current, {
-          sitekey: TURNSTILE_SITE_KEY,
-          theme: "dark",
-          callback: (token) => setTurnstileToken(token),
-          "expired-callback": () => setTurnstileToken(null),
-          "error-callback": () => setTurnstileToken(null),
-        });
-      }
-    };
-    document.body.appendChild(script);
-
-    return () => {
-      if (widgetIdRef.current && window.turnstile) {
-        window.turnstile.remove(widgetIdRef.current);
-      }
-      document.body.removeChild(script);
-    };
-  }, []);
 
   const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -54,44 +21,31 @@ export default function FeedbackForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Honeypot check
-    if (formData.honeypot) return;
-
-    if (!turnstileToken) {
-      setErrorMsg("Please complete the bot check first.");
-      return;
-    }
+    if (formData.honeypot) return; // Basic spam prevention
 
     setFormState("submitting");
-    setErrorMsg("");
 
     try {
-      const res = await fetch("/api/verify-turnstile", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          token: turnstileToken,
-          name: formData.name,
-          email: formData.email,
-          feedback: formData.feedback,
-        }),
-      });
+      const res = await fetch(
+        `https://formspree.io/f/${siteConfig.formspreeId}`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            feedback: formData.feedback,
+            type: "Website Feedback",
+          }),
+        }
+      );
 
-      const data = await res.json();
-
-      if (res.ok && data.success) {
+      if (res.ok) {
         setFormState("success");
       } else {
-        setErrorMsg(data.error || "Failed to send. Please try again.");
         setFormState("error");
-        // Reset the Turnstile widget on failure
-        if (widgetIdRef.current && window.turnstile) {
-          window.turnstile.reset(widgetIdRef.current);
-          setTurnstileToken(null);
-        }
       }
     } catch {
-      setErrorMsg("Network error. Please try again.");
       setFormState("error");
     }
   };
@@ -160,7 +114,7 @@ export default function FeedbackForm() {
           />
         </div>
 
-        {/* Honeypot field for dumb bots */}
+        {/* Honeypot field for spam bots */}
         <div style={{ display: "none" }} aria-hidden="true">
           <input
             type="text"
@@ -172,24 +126,19 @@ export default function FeedbackForm() {
           />
         </div>
 
-        {/* Cloudflare Turnstile widget */}
-        <div ref={turnstileRef} className={styles.turnstile} />
-
-        {(formState === "error" || errorMsg) && (
+        {formState === "error" && (
           <div className={styles.errorMessage}>
             <AlertCircle size={18} />
-            {errorMsg || "Failed to send feedback. Please try again."}
+            Failed to send feedback. Please try again.
           </div>
         )}
 
         <button
           type="submit"
           className={styles.btnPrimary}
-          disabled={formState === "submitting" || !turnstileToken}
+          disabled={formState === "submitting"}
         >
-          {formState === "submitting" ? "Sending..." : (
-            <>Submit Feedback <Send size={16} /></>
-          )}
+          {formState === "submitting" ? "Sending..." : <><span>Submit Feedback</span> <Send size={16} /></>}
         </button>
       </form>
     </div>
