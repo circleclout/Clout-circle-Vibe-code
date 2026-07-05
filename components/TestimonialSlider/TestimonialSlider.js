@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
-import Image from "next/image";
 import testimonials from "@/content/testimonials";
 import styles from "./TestimonialSlider.module.css";
 
@@ -50,15 +49,6 @@ export default function TestimonialSlider() {
         </div>
 
         <div className={styles.author}>
-          <div className={styles.avatar}>
-            <Image 
-              src={`https://i.pravatar.cc/150?u=${t.name.replace(/\s+/g, '')}`} 
-              alt={`${t.name} avatar`} 
-              width={150}
-              height={150}
-              style={{ width: "100%", height: "100%", borderRadius: "50%", objectFit: "cover" }}
-            />
-          </div>
           <div>
             <p className={styles.name}>{t.name}</p>
             <p className={styles.role}>
