@@ -26,7 +26,7 @@ const services = [
       "Story & Reels creation",
     ],
     color: "var(--gold)",
-    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=800&auto=format&fit=crop", // Instagram/Social Media
+    image: "/images/service-social-media.png",
   },
   {
     id: "influencer-marketing",
@@ -46,7 +46,7 @@ const services = [
       "Long-term brand ambassador programs",
     ],
     color: "var(--gold)",
-    image: "https://images.unsplash.com/photo-1516251193007-45ef944ab0c6?q=80&w=800&auto=format&fit=crop", // Influencer/Creators
+    image: "/images/service-influencer.png",
   },
   {
     id: "performance-marketing",
@@ -66,7 +66,7 @@ const services = [
       "Conversion tracking & attribution",
     ],
     color: "var(--gold)",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop", // Data/Charts/Performance
+    image: "/images/service-paid-ads.png",
   },
   {
     id: "creative-branding",
@@ -86,7 +86,7 @@ const services = [
       "Video production & motion graphics",
     ],
     color: "var(--gold)",
-    image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=800&auto=format&fit=crop", // Creative Branding/Colors
+    image: "/images/service-branding.png",
   },
   {
     id: "web-development",
@@ -106,7 +106,7 @@ const services = [
       "Analytics & tracking setup",
     ],
     color: "var(--gold)",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop", // Web Design/Code
+    image: "/images/service-web-design.png",
   },
 ];
 
