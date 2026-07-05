@@ -10,6 +10,7 @@ import ServiceCard from "@/components/ServiceCard/ServiceCard";
 import StatsCounter from "@/components/StatsCounter/StatsCounter";
 import CaseStudyCard from "@/components/CaseStudyCard/CaseStudyCard";
 import FeedbackForm from "@/components/FeedbackForm/FeedbackForm";
+import TestimonialSlider from "@/components/TestimonialSlider/TestimonialSlider";
 import services from "@/content/services";
 import stats from "@/content/stats";
 import siteConfig from "@/content/siteConfig";
@@ -228,6 +229,22 @@ export default function HomeClient({ featuredProjects }) {
                 View All Work
               </Button>
             </div>
+          </ScrollReveal>
+        </div>
+      </section>
+      {/* ═══ TESTIMONIALS / FEEDBACK ═══ */}
+      <section className="section">
+        <div className="container">
+          <ScrollReveal>
+            <SectionHeading
+              label="Feedback"
+              title="What People Are Saying"
+              description="Real feedback from our users and clients."
+            />
+          </ScrollReveal>
+          
+          <ScrollReveal delay={100}>
+            <TestimonialSlider />
           </ScrollReveal>
         </div>
       </section>
