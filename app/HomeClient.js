@@ -195,21 +195,7 @@ export default function HomeClient({ featuredProjects }) {
         </div>
       </section>
 
-      {/* ═══ STATS ═══ */}
-      <section className={styles.statsSection}>
-        <div className={styles.statsAccent} />
-        <div className={`${styles.statsGrid} container`}>
-          {stats.map((stat, i) => (
-            <StatsCounter
-              key={i}
-              value={stat.value}
-              suffix={stat.suffix}
-              label={stat.label}
-            />
-          ))}
-        </div>
-        <div className={styles.statsAccentBottom} />
-      </section>
+
 
       {/* ═══ FEATURED WORK ═══ */}
       <section className="section">
