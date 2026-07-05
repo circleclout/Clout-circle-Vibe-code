@@ -26,7 +26,7 @@ const services = [
       "Story & Reels creation",
     ],
     color: "var(--gold)",
-    image: "/images/service-social-media.png",
+    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=800&auto=format&fit=crop", // Person scrolling social media
   },
   {
     id: "influencer-marketing",
@@ -46,7 +46,7 @@ const services = [
       "Long-term brand ambassador programs",
     ],
     color: "var(--gold)",
-    image: "/images/service-influencer.png",
+    image: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=800&auto=format&fit=crop", // Creator filming on phone
   },
   {
     id: "performance-marketing",
@@ -66,7 +66,7 @@ const services = [
       "Conversion tracking & attribution",
     ],
     color: "var(--gold)",
-    image: "/images/service-paid-ads.png",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop", // Analytics dashboard on laptop
   },
   {
     id: "creative-branding",
@@ -86,7 +86,7 @@ const services = [
       "Video production & motion graphics",
     ],
     color: "var(--gold)",
-    image: "/images/service-branding.png",
+    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=800&auto=format&fit=crop", // Design workspace with color swatches
   },
   {
     id: "web-development",
@@ -106,7 +106,7 @@ const services = [
       "Analytics & tracking setup",
     ],
     color: "var(--gold)",
-    image: "/images/service-web-design.png",
+    image: "https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=800&auto=format&fit=crop", // Laptop with clean UI design
   },
 ];
 
