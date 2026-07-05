@@ -44,7 +44,7 @@ const siteConfig = {
     defaultTitle: "Clout Circle — Marketing That Makes Brands Unforgettable",
     description:
       "Full-service marketing agency specializing in social media management, influencer marketing, performance ads, and creative branding for startups and growing brands.",
-    siteUrl: "https://cloutcircle.com",
+    siteUrl: "https://circleclout.com",
     ogImage: "/images/og-image.jpg",
     twitterHandle: "@cloutcircle",
   },

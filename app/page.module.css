@@ -285,11 +285,15 @@
 @media (max-width: 768px) {
   .hero {
     min-height: 0;
-    padding: var(--space-3xl) 0;
+    padding: calc(var(--nav-height) + var(--space-xl)) 0 var(--space-3xl);
   }
   
   .heroTitle {
-    font-size: var(--text-4xl);
+    font-size: var(--text-3xl);
+  }
+
+  .heroSubtitle {
+    font-size: var(--text-base);
   }
   
   .heroFloatingStats {
@@ -319,10 +323,26 @@
   .heroFloatingStats {
     flex-direction: column;
     gap: var(--space-md);
+    width: 100%;
   }
   
   .heroStatDivider {
     width: 40px;
     height: 1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: var(--text-2xl);
+  }
+  
+  .heroCtas {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .heroCtas > * {
+    width: 100%;
   }
 }
