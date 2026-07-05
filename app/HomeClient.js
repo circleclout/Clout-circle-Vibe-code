@@ -20,7 +20,7 @@ export default function HomeClient({ featuredProjects }) {
   const videoRef = useRef(null);
 
   useEffect(() => {
-    const vids = ["/vids/vid1.mp4", "/vids/vid2.mp4", "/vids/vid3.mp4"];
+    const vids = ["/vids/vid2.mp4", "/vids/vid3.mp4"];
     const randomIndex = Math.floor(Math.random() * vids.length);
     setVideoSrc(vids[randomIndex]);
   }, []);
