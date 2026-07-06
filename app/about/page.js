@@ -102,16 +102,16 @@ export default function AboutPage() {
         <div className={`${styles.storyGrid} container`}>
           <ScrollReveal direction="left" className={styles.storyContent}>
             <h3 className={styles.storyTitle}>
-              We started because we saw people getting generic marketing, and honestly? We like money. 💸
+              A straightforward approach to marketing that actually works.
             </h3>
             <p>
-              Let&apos;s cut the corporate LARP. We didn&apos;t start this agency because of some profound spiritual calling to &quot;synergize brand ecosystems.&quot; We started it because most marketing out there is boring, generic, and ineffective—and we knew we could do it way better. Plus, money is nice.
+              We founded Clout Circle with a simple goal: to provide marketing strategies that deliver measurable results. No overcomplicated jargon, just clear execution and growth.
             </p>
             <p>
-              So far, we&apos;ve helped 12 brands establish a serious footing in the market without using a single stock photo of people pointing at a whiteboard. We work entirely remotely, mostly in sweatpants, fueled by caffeine and a shared desire to actually make things that grab attention.
+              So far, we&apos;ve helped 12 brands build a solid foundation and scale their audience. We operate entirely remotely, focusing our time and resources on creating campaigns that genuinely connect and convert.
             </p>
             <p>
-              We want to make you rich so that you make us rich. It&apos;s a beautiful, symbiotic relationship.
+              We believe that a strong partnership is built on mutual success, transparency, and hard work.
             </p>
           </ScrollReveal>
 
