@@ -206,8 +206,8 @@
 
 @media (max-width: 600px) {
   .content {
-    grid-template-columns: 1fr;
-    gap: var(--space-2xl);
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
   }
   
   .bottomInner {
@@ -218,5 +218,19 @@
   
   .contactItem a {
     word-break: break-all;
+    font-size: 13px;
+  }
+
+  .whatsappBtn {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .colTitle {
+    font-size: 12px;
+  }
+
+  .footerLink, .brandDesc, .contactItem {
+    font-size: 13px;
   }
 }
