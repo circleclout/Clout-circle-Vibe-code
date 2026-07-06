@@ -83,7 +83,7 @@
 }
 
 .btnPrimary:hover:not(:disabled) {
-  background: var(--gold-hover);
+  background: var(--gold-dark);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(230, 163, 23, 0.2);
 }
