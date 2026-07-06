@@ -86,6 +86,7 @@ export default function AboutPage() {
     <>
       {/* Hero */}
       <section className={styles.hero}>
+        <div className={styles.heroGlow}></div>
         <div className="container">
           <ScrollReveal>
             <SectionHeading
@@ -160,9 +161,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team (Temporarily Hidden) */}
-      {false && (
-        <section className="section">
+      {/* Team */}
+      {true && (
+        <section className={`${styles.teamSection} section`}>
           <div className="container">
             <ScrollReveal>
               <SectionHeading
