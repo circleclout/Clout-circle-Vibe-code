@@ -67,7 +67,7 @@
 
 .btnPrimary {
   background: var(--gold);
-  color: var(--bg-dark);
+  color: var(--text-inverse);
   padding: 16px 24px;
   border-radius: var(--radius-full);
   font-weight: 600;
