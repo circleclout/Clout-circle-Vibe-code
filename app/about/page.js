@@ -3,10 +3,6 @@ import {
   Lightbulb,
   Heart,
   Zap,
-  Search,
-  BarChart3,
-  Rocket,
-  RefreshCcw,
 } from "lucide-react";
 import {
   IconInstagram,
@@ -48,32 +44,7 @@ const values = [
   },
 ];
 
-const process = [
-  {
-    step: "01",
-    icon: Search,
-    title: "Discovery",
-    desc: "We dive deep into your brand, audience, competitors, and goals to understand exactly where you stand and where you want to go.",
-  },
-  {
-    step: "02",
-    icon: BarChart3,
-    title: "Strategy",
-    desc: "We craft a custom roadmap — not a template — tailored to your specific goals, budget, and timeline.",
-  },
-  {
-    step: "03",
-    icon: Rocket,
-    title: "Execute",
-    desc: "Our team brings the strategy to life with content, campaigns, designs, and development — all on schedule.",
-  },
-  {
-    step: "04",
-    icon: RefreshCcw,
-    title: "Optimize",
-    desc: "We track everything, learn what works, and continuously improve. Marketing isn't set-and-forget — it's a cycle.",
-  },
-];
+
 
 const socialIconMap = {
   linkedin: IconLinkedin,
@@ -210,32 +181,7 @@ export default function AboutPage() {
         </section>
       )}
 
-      {/* Process */}
-      <section className={`${styles.processSection} section`}>
-        <div className="container">
-          <ScrollReveal>
-            <SectionHeading
-              label="Our Process"
-              title="How We Get It Done"
-              description="No mystery, no fluff. Here's exactly how we work with every client."
-            />
-          </ScrollReveal>
-          <div className={styles.processGrid}>
-            {process.map((step, i) => (
-              <ScrollReveal key={i} delay={i * 120}>
-                <div className={styles.processCard}>
-                  <span className={styles.processStep}>{step.step}</span>
-                  <div className={styles.processIconWrap}>
-                    <step.icon size={24} />
-                  </div>
-                  <h4 className={styles.processTitle}>{step.title}</h4>
-                  <p className={styles.processDesc}>{step.desc}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* CTA */}
       <section className={styles.ctaSection}>
